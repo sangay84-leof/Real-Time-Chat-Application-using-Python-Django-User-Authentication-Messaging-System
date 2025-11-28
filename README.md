@@ -32,4 +32,47 @@ It supports **user authentication**, **private & group chats**, **live message u
 
 ---
 
-## 📂 Project Structure
+chat-app/
+│── manage.py
+│── requirements.txt
+│── LICENSE
+│
+├── chat/
+│ ├── consumers.py
+│ ├── models.py
+│ ├── routing.py
+│ ├── views.py
+│ ├── templates/chat/
+│
+├── accounts/
+│ ├── views.py
+│ ├── models.py
+│ ├── forms.py
+│
+└── chat_app/
+├── settings.py
+├── urls.py
+├── asgi.py
+├── routing.py
+
+---
+
+## ⭐ Contribution
+Pull requests are welcome.  
+Feel free to add new features or report issues.
+
+---
+
+## 📌 License
+This project is licensed under the **MIT License**.
+
+Copyright © 
+**Sangay Wangchen** *(Update the year if needed)*
+
+---
+
+## 👤 Developer
+**Sangay Wangchen**  
+(You can add links below)
+
+
