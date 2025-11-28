@@ -67,12 +67,12 @@ Feel free to add new features or report issues.
 This project is licensed under the **MIT License**.
 
 Copyright © 
-**Sangay Wangchen** *(Update the year if needed)*
+**Sangay Wangchen** *
 
 ---
 
 ## 👤 Developer
 **Sangay Wangchen**  
-(You can add links below)
+
 
 
