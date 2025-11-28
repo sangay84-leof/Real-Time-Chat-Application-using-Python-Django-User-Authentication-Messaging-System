@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Stream</title>
+    {% load static %}
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'chat/style.css' %}?v=2" />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <div class="chat-container">
+        <header>
+          <div class="header-content">
+            <div class="status-dot"></div>
+            <h1>Live Chat Stream</h1>
+          </div>
+          <span class="subtitle">Circular Queue • Max 7</span>
+        </header>
+
+        <div id="chat-window" class="chat-window">
+          {% for message in messages %}
+          <div class="message-wrapper">
+            <img
+              src="{% static 'chat/profile.png' %}"
+              alt="Profile"
+              class="avatar"
+            />
+            <div class="message-content">
+              <div class="message-bubble">{{ message.text }}</div>
+              <span class="timestamp">{{ message.timestamp }}</span>
+            </div>
+          </div>
+          {% empty %}
+          <div class="empty-state">
+            <p>No messages yet. Start the conversation!</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="input-area">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type a message..."
+            autocomplete="off"
+          />
+          <button id="send-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+
+        <div class="footer-actions">
+          <button id="delete-btn" class="text-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path
+                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+              ></path>
+            </svg>
+            Delete Oldest
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'chat/script.js' %}?v=2"></script>
+  </body>
+</html>
